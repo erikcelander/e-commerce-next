@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { NavMenu } from "./nav-menu";
-import Image from "next/image";
 
 export async function NavBar({
   className,
@@ -11,15 +10,22 @@ export async function NavBar({
       className={` border-b-primary/30 flex h-16 items-center justify-between border-b`}
       {...props}
     >
-      <div className="flex flex-initial flex-row items-center">
-        <h3 className="text-primary absolute items-center pl-5 text-center text-2xl ">
+      <div className="flex w-32 flex-initial flex-row items-center">
+        <h3 className="text-primary  items-center pl-5 text-center text-2xl ">
           next
         </h3>
       </div>
 
       <NavMenu />
 
-      <div className=""></div>
+      <div className="w-32 text-end">
+        <Link
+          className=" hover:text-primary/80 duration-250 pr-5 transition-colors"
+          href={"/cart"}
+        >
+          cart
+        </Link>
+      </div>
     </div>
   );
 }

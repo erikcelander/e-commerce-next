@@ -1,13 +1,14 @@
 import { Products } from "@/components/products/products";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default function Page() {
   // const products = await getProducts()
 
   return (
-    <main className="flex min-h-screen flex-col items-center">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <Products />
-      </div>
+    <main className="flex min-h-[calc(100vh-64px)] flex-col items-center">
+      <Products />
     </main>
   );
 }
