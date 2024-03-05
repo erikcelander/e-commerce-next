@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { NavMenu } from "./nav-menu";
+import { CartQuantity } from "./cart-quantity";
 
 export async function NavBar({
   className,
@@ -18,13 +19,16 @@ export async function NavBar({
 
       <NavMenu />
 
-      <div className="w-32 text-end">
+      <div className="flex items-center justify-center pr-5 text-end">
         <Link
-          className=" hover:text-primary/80 duration-250 pr-5 transition-colors"
+          className=" hover:text-primary/80 duration-250 transition-colors"
           href={"/cart"}
         >
           cart
         </Link>
+        <div className="absolute mb-6 ml-8 text-sm">
+          <CartQuantity />
+        </div>
       </div>
     </div>
   );

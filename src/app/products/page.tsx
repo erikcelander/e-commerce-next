@@ -4,8 +4,6 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 export default function Page() {
-  // const products = await getProducts()
-
   return (
     <main className="flex min-h-[calc(100vh-64px)] flex-col items-center">
       <Products />
