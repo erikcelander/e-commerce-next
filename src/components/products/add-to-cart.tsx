@@ -1,11 +1,11 @@
 "use client";
 
-import { CartItem, Product } from "@/lib/types";
+import { CartItemType, Product } from "@/lib/types";
 import { addToCart, cartItems } from "@/lib/stores/cart";
 
 export const AddToCart = ({ product }: { product: Product }) => {
   const handleOnClick = () => {
-    const cartItem: CartItem = {
+    const cartItem: CartItemType = {
       id: product.id,
       name: product.name,
       currency: product.currency,

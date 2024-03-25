@@ -1,12 +1,12 @@
 import { persistentAtom } from "@nanostores/persistent";
-import { CartItem } from "../types";
+import { CartItemType } from "../types";
 
-export const cartItems = persistentAtom<CartItem[]>("cart", [], {
+export const cartItems = persistentAtom<CartItemType[]>("cart", [], {
   encode: JSON.stringify,
   decode: JSON.parse,
 });
 
-export function addToCart(product: CartItem) {
+export function addToCart(product: CartItemType) {
   const currentItems = cartItems.get();
   const existingItemIndex = currentItems.findIndex(
     (item) => item.id === product.id,

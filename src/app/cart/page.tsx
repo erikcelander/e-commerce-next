@@ -3,10 +3,11 @@
 import { useStore } from "@nanostores/react";
 import { cartItems } from "@/lib/stores/cart";
 import { useEffect, useState } from "react";
+import Cart from "@/components/cart/cart";
 
 export default function Page() {
   const [isClient, setIsClient] = useState(false);
-  const cart = useStore(cartItems);
+  const items = useStore(cartItems);
 
   useEffect(() => {
     // Component did mount, indicating we're now client-side
@@ -17,21 +18,9 @@ export default function Page() {
     return null;
   }
   return (
-    <main className="flex min-h-screen flex-col items-center ">
+    <main className="flex min-h-[calc(100vh-64px)] flex-col items-center ">
       <div>
-        {" "}
-        {cart.map((item) => {
-          return (
-            <div className="flex w-96 flex-row justify-between " key={item.id}>
-              <h1>{item.name}</h1>
-
-              <h1>
-                {item.price} {item.currency}
-              </h1>
-              <h1>{item.quantity}</h1>
-            </div>
-          );
-        })}{" "}
+        <Cart items={items} />
       </div>
     </main>
   );

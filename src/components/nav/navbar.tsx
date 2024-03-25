@@ -8,7 +8,7 @@ export async function NavBar({
 }: React.HTMLAttributes<HTMLElement>) {
   return (
     <div
-      className={` border-b-primary/30 flex h-16 items-center justify-between border-b`}
+      className={` flex h-16 items-center justify-between border border-b shadow-sm`}
       {...props}
     >
       <div className="flex w-32 flex-initial flex-row items-center">
