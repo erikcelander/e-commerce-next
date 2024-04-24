@@ -13,6 +13,7 @@ export const AddToCart = ({ product }: { product: Product }) => {
       description: product.description,
       price: product.price,
       quantity: 1,
+      stock: product.stock,
     };
 
     addToCart(cartItem);

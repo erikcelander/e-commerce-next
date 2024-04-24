@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Product } from "@/lib/types";
-import { addToCart, cartItems } from "@/lib/stores/cart";
 import { AddToCart } from "./add-to-cart";
 
 export const ProductPage = ({ product }: { product: Product }) => {

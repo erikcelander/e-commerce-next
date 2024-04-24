@@ -33,6 +33,9 @@ export function removeFromCart(productId: string) {
 }
 
 export function updateQuantity(productId: string, quantity: number) {
+  if (quantity === 0) {
+    return removeFromCart(productId);
+  }
   const currentItems = cartItems.get();
   const updatedItems = currentItems.map((item) =>
     item.id === productId ? { ...item, quantity: Math.max(quantity, 0) } : item,
